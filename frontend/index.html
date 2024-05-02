@@ -10,9 +10,14 @@
     <div id="app"></div>
     <!-- Test OGCIO DS Here -->
     <div style="margin: 50px">
+      <!-- Button testing -->
       <button id="button" data-module="govie-button" class="govie-button">
         Apply
       </button>
+
+      <br />
+
+      <!-- Tooltip testing 1 -->
       <span data-module="govie-tooltip">
         <button data-module="govie-icon-button" class="govie-icon-button">
           <svg
@@ -30,8 +35,27 @@
           <span class="govie-visually-hidden">Other tooltip label</span>
         </button>
         <span class="govie-tooltip govie-tooltip--top">Other tooltip label</span>
+      </span>
+
+      <br />
+
+      <!-- Tooltip testing 2 -->
+
+      <span data-module="govie-tooltip">Hover me<span class="govie-tooltip govie-tooltip--top">Top tooltip</span></span>
+
+      <br />
+
+      <!-- Banner testing -->
+      <div class="govie-panel govie-panel--confirmation">
+        <h1 class="govie-panel__title">Application complete</h1>
+      </div>
+
+      <!-- Tick testing -->
+      <label data-module="govie-tick">
+        <input class="govie-tick" type="checkbox" value="checkbox" checked="false">
+      </label>
+
     </div>
-    </span>
     <script src="main.js" type="module"></script>
   </body>
 </html>
