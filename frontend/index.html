@@ -6,55 +6,457 @@
     <title>Hello World</title>
   </head>
   <body>
-    <!-- Test Fastify Here -->
-    <div id="app"></div>
-    <!-- Test OGCIO DS Here -->
-    <div style="margin: 50px">
-      <!-- Button testing -->
-      <button id="button" data-module="govie-button" class="govie-button">
-        Apply
-      </button>
+    <div id="app" class="poc-govie">
+      <header role="banner" class="govie-superheader">
+        <div class="govie-superheader__container govie-clearfix">
+          <div class="govie-width-container">
+            <div class="govie-superheader__container">
+              <div class="govie-superheader__header-logo">
+                <a href="#" class="govie-header__link govie-header__link--homepage" title="Go to the gov.ie homepage">
+                  <span class="govie-header__logotype"></span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Navigation Bar -->
+          <nav class="govie-superheader__content js-module-initialised" data-module="govie-superheader">
+            <h2 class="govie-visually-hidden">Navigation menu</h2>
+            <div class="govie-width-container govie-superheader__button-width-container">
+              <div class="govie-superheader__button-container">
+                <!-- Links -->
+                <div class="govie-superheader__navigation-item govie-superheader__navigation-language-menu">
+                  <ul class="govie-header__navigation-list">
+                    <li class="govie-header__navigation-item">
+                      <a class="govie-header__link" href="#0">News</a>
+                    </li>
+                    <li class="govie-header__navigation-item">
+                      <a class="govie-header__link" href="#1">Departments</a>
+                    </li>
+                    <li class="govie-header__navigation-item">
+                      <a class="govie-header__link" href="#2">Services</a>
+                    </li>
+                  </ul>
+                </div>
+                <!-- EO | Links -->
+                <!-- Language -->
+                <div class="govie-superheader__navigation-item govie-superheader__navigation-language-menu">
+                  <a class="govie-superheader__navigation-item-link" href="#" hidden=""></a>
+                  <button class="govie-superheader__navigation-top-toggle-button" type="button" aria-label="Show navigation Languages" aria-expanded="false" id="super-navigation-languages-toggle" aria-controls="super-navigation-languages" data-text-for-hide="Hide navigation Languages" data-text-for-show="Show navigation Languages" data-toggle-desktop-group="top" data-toggle-mobile-group="top">
+                    <span class="govie-superheader__navigation-top-toggle-button-inner">Languages</span>
+                  </button>
+                  <div class="govie-superheader__navigation-language-dropdown-menu" hidden="" id="super-navigation-languages">
+                    <ul class="govie-superheader__navigation-language-dropdown-menu-list">
+                      <li class="govie-superheader__navigation-language-dropdown-menu-list-item">
+                        <a class="govie-link govie-link--no-underline">English</a>
+                      </li>
+                      <li class="govie-superheader__navigation-language-dropdown-menu-list-item">
+                        <a class="govie-link govie-link--no-underline">Gaeilge</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <!-- EO | Language -->
+                <!-- Search -->
+                <div class="govie-superheader__search-item">
+                  <button class="govie-superheader__search-toggle-button" type="button" aria-label="Show search menu" aria-expanded="false" id="super-search-menu-toggle" aria-controls="super-search-menu" data-text-for-hide="Hide search menu" data-text-for-show="Show search menu" data-toggle-mobile-group="top" data-toggle-desktop-group="top">
+                    <span class="govie-visually-hidden">Search gov.ie</span>
+                    <span aria-hidden="true" class="govie-superheader__navigation-top-toggle-close-icon" focusable="false">
+                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14 1.41L12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41Z" fill="#505A5F"></path>
+                      </svg>
+                    </span>
+                    <svg class="govie-superheader__search-toggle-button-link-icon" width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                      <circle cx="12.0161" cy="11.0161" r="8.51613" stroke="currentColor" stroke-width="3">
+                      </circle>
+                      <line x1="17.8668" y1="17.3587" x2="26.4475" y2="25.9393" stroke="currentColor" stroke-width="3">
+                      </line>
+                    </svg>
+                  </button>
+                  <a class="govie-superheader__search-item-link" href="/search" hidden="">
+                    <span class="govie-visually-hidden">Search gov.ie</span>
+                    <svg class="govie-superheader__search-toggle-button-link-icon" width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                      <circle cx="12.0161" cy="11.0161" r="8.51613" stroke="currentColor" stroke-width="3">
+                      </circle>
+                      <line x1="17.8668" y1="17.3587" x2="26.4475" y2="25.9393" stroke="currentColor" stroke-width="3">
+                      </line>
+                    </svg>
+                  </a>
+                </div>
+                <!-- EO | Search  -->
+              </div>
+            </div>
+            <!-- Navigation Dropdown Area Container -->
+            <div class="govie-superheader__navigation-dropdown-menu" hidden="" id="super-navigation-menu">
+              <div class="govie-width-container">
+                <div class="govie-grid-row govie-superheader__navigation-items">
+                </div>
+              </div>
+            </div>
+            <!-- EO | Navigation Dropdown Area Container -->
+            <div class="govie-superheader__navigation-dropdown-menu" id="super-search-menu">
+              <div class="govie-width-container govie-superheader__search-container govie-superheader__search-items">
+                <h3 class="govie-visually-hidden">Search</h3>
+                <div class="govie-grid-row">
+                  <div class="govie-grid-column-full">
+                    <form class="govie-superheader__search-form" id="search" role="search" method="get" action="#" aria-label="Site-wide">
+                      <div class="govie-superheader-search govie-!-display-none-print govie-superheader-search--large govie-superheader-search--on-white govie-superheader-search--separate-label">
+                        <label class="govie-label govie-label--m">Search gov.ie</label>
+                        <div class="govie-superheader-search__item-wrapper">
+                          <input class="govie-superheader-search__item govie-superheader-search__input js-class-toggle" name="Search" type="Search">
+                          <div class="govie-superheader-search__item govie-superheader-search__submit-wrapper">
+                            <button class="govie-superheader-search__submit" type="submit">Search<svg class="govie-superheader__search-toggle-button-link-icon" width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                                <circle cx="12.0161" cy="11.0161" r="8.51613" stroke="currentColor" stroke-width="3">
+                                </circle>
+                                <line x1="17.8668" y1="17.3587" x2="26.4475" y2="25.9393" stroke="currentColor" stroke-width="3">
+                                </line>
+                              </svg>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </nav>
+          <!-- EO | Navigation Bar -->
+        </div>
+      </header>
 
-      <br />
+      <div class="govie-content">
+        <!-- Services -->
+        <div class="govie-services">
+          <img src="./public/assets/images/logotype.png" alt="gov_ie_logo">
+          <div>
+            <ul>
+              <li>
+                <a class="govie-link" href="#">Schemes and Payments</a>
+              </li>
+              <hr class="govie-section-break govie-section-break--visible">
+              <li>
+                <a class="govie-link" href="#">Agfood and other Online Services offered by the Department of Agriculture, Food and the Marine</a>
+              </li>
+              <hr class="govie-section-break govie-section-break--visible">
+              <li>
+                <a class="govie-link" href="#">Pet Travel</a>
+              </li>
+              <hr class="govie-section-break govie-section-break--visible">
+              <li>
+                <a class="govie-link" href="#">Department of Agriculture, Food and the Marine Divisions</a>
+              </li>
+              <hr class="govie-section-break govie-section-break--visible">
+              <li>
+                <a class="govie-link" href="#">Environmental Information</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- EO | Services -->
 
-      <!-- Tooltip testing 1 -->
-      <span data-module="govie-tooltip">
-        <button data-module="govie-icon-button" class="govie-icon-button">
-          <svg
-            width="14"
-            height="14"
-            viewBox="0 0 14 14"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M14 1.41L12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41Z"
-              fill="#505A5F"
-            ></path>
-          </svg>
-          <span class="govie-visually-hidden">Other tooltip label</span>
-        </button>
-        <span class="govie-tooltip govie-tooltip--top">Other tooltip label</span>
-      </span>
+        <!-- Plans -->
+        <div class="govie-main-plan">
+          <img src="./public/assets/images/ireland-green.jpg" alt="ireland-fields-image">
+          <div class="govie-main-plan-card">
+            <h3>
+              <a class="govie-link" href="#">New CAP Strategic Plan for Ireland</a>
+            </h3>
+            <p>The new CAP Strategic Plan, including new CAP schemes for farmers.</p>
+          </div>
+        </div>
 
-      <br />
+        <div class="govie-plans">
+          <div class="govie-card">
+            <img src="./public/assets/images/ireland-green.jpg" alt="ireland-fields-image">
+            <h4>
+              <a class="govie-link" href="#">Agri-Climate Rural Environment Scheme (ACRES)</a>
+            </h4>
+            <p>Payment rates and actions on Agri-Climate Rural Environment Scheme (ACRES)</p>
+          </div>
+          <div class="govie-card">
+            <img src="./public/assets/images/ireland-green.jpg" alt="ireland-fields-image">
+            <h4>
+              <a class="govie-link" href="#">Brexit and the Agri-Food Sector</a>
+            </h4>
+            <p>Follow our step-by-step guides on how to import and export.</p>
+          </div>
+          <div class="govie-card">
+            <img src="./public/assets/images/ireland-green.jpg" alt="ireland-fields-image">
+            <h4>
+              <a class="govie-link" href="#">Forestry in Ireland</a>
+            </h4>
+            <p>All you need to know about grants and schemes in forestry in Ireland</p>
+          </div>
+        </div>
+        <!-- EO | Plans -->
 
-      <!-- Tooltip testing 2 -->
+        <!-- Consultations, Publications & Press Releases -->
+        <div class="govie-collaborations">
+          <div class="govie-collaborations--card">
+            <h3>Consultations</h3>
+            <div class="govie-collaborations--card-item">
+              <span class="govie-caption-s">15 May 2024</span>
+              <h4 class="govie-heading-s">
+                <a class="govie-link" href="">T05-530B Kinsale Oysterhaven Seafood Ltd. Aquaculture and Foreshore Licence Application, Kinsale</a>
+              </h4>
+              <hr class="govie-section-break govie-section-break--visible">
+            </div>
+            <div class="govie-collaborations--card-item">
+              <span class="govie-caption-s">15 May 2024</span>
+              <h4 class="govie-heading-s">
+                <a class="govie-link" href="">T05-530A Kinsale Oysterhaven Seafood Ltd. Aquaculture and Foreshore Licence Application, Kinsale</a>
+              </h4>
+              <hr class="govie-section-break govie-section-break--visible">
+            </div>
+            <div class="govie-collaborations--card-item">
+              <span class="govie-caption-s">15 May 2024</span>
+              <h4 class="govie-heading-s">
+                <a class="govie-link" href="">T05-530C Kinsale Oysterhaven Seafood Ltd. Aquaculture and Foreshore Licence Application, Kinsale</a>
+              </h4>
+            </div>
+            <div class="govie-collaborations--card-item">
+              <a href="" class="govie-link">View all</a>
+            </div>
+          </div>
+          <div class="govie-collaborations--card">
+            <h3>Publications</h3>
+            <div class="govie-collaborations--card-item">
+              <span class="govie-caption-s">14 May 2024</span>
+              <h4 class="govie-heading-s">
+                <a class="govie-link" href="">Final Report of the Food Vision 2030 Tillage Group</a>
+              </h4>
+              <hr class="govie-section-break govie-section-break--visible">
+            </div>
+            <div class="govie-collaborations--card-item">
+              <span class="govie-caption-s">8 May 2024</span>
+              <h4 class="govie-heading-s">
+                <a class="govie-link" href="">T05-444D&E Comhlucht Iascaireachta Fanad Teo. Aquaculture/Foreshore Licence Application, Roancarrig</a>
+              </h4>
+              <hr class="govie-section-break govie-section-break--visible">
+            </div>
+            <div class="govie-collaborations--card-item">
+              <span class="govie-caption-s">8 May 2024</span>
+              <h4 class="govie-heading-s">
+                <a class="govie-link" href="">The European Partnership on Animal Health and Welfare, The 1st Co-funded Call for Transnational</a>
+              </h4>
+            </div>
+            <div class="govie-collaborations--card-item">
+              <a href="" class="govie-link">View all</a>
+            </div>
+          </div>
+          <div class="govie-collaborations--card">
+            <h3>Press Releases</h3>
+            <div class="govie-collaborations--card-item">
+              <span class="govie-caption-s">15 May 2024</span>
+              <h4 class="govie-heading-s">
+                <a class="govie-link" href="">Minister McConalogue and Minister of State Heydon announce opening of South Korean market for Irish beef</a>
+              </h4>
+              <hr class="govie-section-break govie-section-break--visible">
+            </div>
+            <div class="govie-collaborations--card-item">
+              <span class="govie-caption-s">14 May 2024</span>
+              <h4 class="govie-heading-s">
+                <a class="govie-link" href="">Minister publishes Final Report of the Food Vision Tillage Group</a>
+              </h4>
+              <hr class="govie-section-break govie-section-break--visible">
+            </div>
+            <div class="govie-collaborations--card-item">
+              <span class="govie-caption-s">13 May 2024</span>
+              <h4 class="govie-heading-s">
+                <a class="govie-link" href="">Minister Hackett co-chairs the Spring meeting of the now bi-annual Horticulture Industry Forum</a>
+              </h4>
+            </div>
+            <div class="govie-collaborations--card-item">
+              <a href="" class="govie-link">View all</a>
+            </div>
+          </div>
+        </div>
+        <!-- EO | Consultations, Publications & Press Releases -->
 
-      <span data-module="govie-tooltip">Hover me<span class="govie-tooltip govie-tooltip--top">Top tooltip</span></span>
+        <!-- Policies & Services -->
+        <div class="govie-regulations">
+          <div class="govie-regulations--card">
+            <h3>Policies</h3>
+            <div class="govie-regulations--card-item">
+              <p>
+                <a class="govie-link" href="">Agriculture and Food</a>
+              </p>
+              <hr class="govie-section-break govie-section-break--visible">
+            </div>
+            <div class="govie-regulations--card-item">
+              <p>
+                <a class="govie-link" href="">Marine</a>
+              </p>
+              <hr class="govie-section-break govie-section-break--visible">
+            </div>
+            <div class="govie-regulations--card-item">
+              <p>
+                <a class="govie-link" href="">Food Vision 2030 - A World Leader in Sustainable Food Systems</a>
+              </p>
+              <hr class="govie-section-break govie-section-break--visible">
+            </div>
+          </div>
+          <div class="govie-regulations--card">
+            <h3>Services</h3>
+            <div class="govie-regulations--card-item">
+              <p>
+                <a class="govie-link" href="">Basic Payment Scheme</a>
+              </p>
+              <hr class="govie-section-break govie-section-break--visible">
+            </div>
+            <div class="govie-regulations--card-item">
+              <p>
+                <a class="govie-link" href="">Market Access - Export Information Portal</a>
+              </p>
+              <hr class="govie-section-break govie-section-break--visible">
+            </div>
+            <div class="govie-regulations--card-item">
+              <p>
+                <a class="govie-link" href="">View all Schemes and Services offered by the Department</a>
+              </p>
+              <hr class="govie-section-break govie-section-break--visible">
+            </div>
+          </div>
+        </div>
+        <!-- EO | Policies & Services -->
 
-      <br />
+        <!-- Ministers -->
+        <div class="govie-ministers">
+          <h3>Ministers</h3>
+          <div class="govie-ministers-cards">
+            <div class="govie-ministers--profile-card">
+              <div class="govie-ministers--profile-card__image">
+                <img src="./public/assets/images/minister-pic.png" alt="minister-profile-pic">
+              </div>
+              <div class="govie-ministers--profile-card__info">
+                <h4>
+                  <a class="govie-link" href="">Charlie McConalogue</a>
+                </h4>
+                <a class="govie-link" href="">Minister for Agriculture, Food and the Marine</a>
+              </div>
+            </div>
+            <div class="govie-ministers--profile-card">
+              <div class="govie-ministers--profile-card__image">
+                <img src="./public/assets/images/minister-pic.png" alt="minister-profile-pic">
+              </div>
+              <div class="govie-ministers--profile-card__info">
+                <h4>
+                  <a class="govie-link" href="">Pippa Hackett</a>
+                </h4>
+                <a class="govie-link" href="">Minister of State with responsibility for Land Use and Biodiversity</a>
+              </div>
+            </div>
+            <div class="govie-ministers--profile-card">
+              <div class="govie-ministers--profile-card__image">
+                <img src="./public/assets/images/minister-pic.png" alt="minister-profile-pic">
+              </div>
+              <div class="govie-ministers--profile-card__info">
+                <h4>
+                  <a class="govie-link" href="">Martin Heydon</a>
+                </h4>
+                <a class="govie-link" href="">Minister of State with responsibility for Research and Development, Farm Safety and New Market Development</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- EO | Ministers -->
 
-      <!-- Banner testing -->
-      <div class="govie-panel govie-panel--confirmation">
-        <h1 class="govie-panel__title">Application complete</h1>
+        <div class="govie-other-ministers">
+          <h3>Senior Management</h3>
+          <div class="govie-other-ministers-card-container"> 
+            <div class="govie-other-ministers--card">
+              <div class="govie-other-ministers--card-item">
+                <h4>
+                  <a class="govie-link" href="">Brendan Gleeson</a>
+                </h4>
+                <a class="govie-link" href="">Secretary General</a>
+              </div>
+              <div class="govie-other-ministers--card-item">
+                <h4>
+                  <a class="govie-link" href="">Fran Morrin</a>
+                </h4>
+                <a class="govie-link" href="">Assistant Secretary, Direct Payments Division</a>
+              </div>
+              <div class="govie-other-ministers--card-item">
+                <h4>
+                  <a class="govie-link" href="">Dr. Donal Sammin</a>
+                </h4>
+                <a class="govie-link" href="">Head of Legislation, One Health</a>
+              </div>
+              <div class="govie-other-ministers--card-item">
+                <h4>
+                  <a class="govie-link" href="">Gordon Conroy</a>
+                </h4>
+                <a class="govie-link" href="">Chief Financial Officer</a>
+              </div>
+            </div>
+            <div class="govie-other-ministers--card">
+              <div class="govie-other-ministers--card-item">
+                <h4>
+                  <a class="govie-link" href="">Martin Blake</a>
+                </h4>
+                <a class="govie-link" href="">Chief Veterinary Officer</a>
+              </div>
+              <div class="govie-other-ministers--card-item">
+                <h4>
+                  <a class="govie-link" href="">Colm Hayes</a>
+                </h4>
+                <a class="govie-link" href="">Assistant Secretary General for Agri-Food, Sectoral Policy and Strategy Development</a>
+              </div>
+              <div class="govie-other-ministers--card-item">
+                <h4>
+                  <a class="govie-link" href="">Paul Savage</a>
+                </h4>
+                <a class="govie-link" href="">Assistant Secretary, Rural Development</a>
+              </div>
+            </div>
+            <div class="govie-other-ministers--card">
+              <div class="govie-other-ministers--card-item">
+                <h4>
+                  <a class="govie-link" href="">Bill Callanan</a>
+                </h4>
+                <a class="govie-link" href="">Chief Inspector, Agriculture</a>
+              </div>
+              <div class="govie-other-ministers--card-item">
+                <h4>
+                  <a class="govie-link" href="">Denise Kennedy</a>
+                </h4>
+                <a class="govie-link" href="">Head of HR and Corporate Affairs</a>
+              </div>
+              <div class="govie-other-ministers--card-item">
+                <h4>
+                  <a class="govie-link" href="">Louise McKeever</a>
+                </h4>
+                <a class="govie-link" href="">Chief Information Officer and Head of Operations</a>
+              </div>
+              <div class="govie-other-ministers--card-item">
+                <h4>
+                  <a class="govie-link" href="">Sharon M. Murphy</a>
+                </h4>
+                <a class="govie-link" href="">Acting Assistant Secretary General, General EU/International and Rural Development</a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <!-- Tick testing -->
-      <label data-module="govie-tick">
-        <input class="govie-tick" type="checkbox" value="checkbox" checked="false">
-      </label>
-
+      <footer class="govie-footer" role="contentinfo">
+        <div class="govie-width-container">
+          <div class="govie-footer__meta">
+            <div class="govie-footer__meta-item govie-footer__meta-item--grow">
+              <svg aria-hidden="true" focusable="false" class="govie-footer__licence-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 483.2 195.7" height="17" width="41">
+                <path fill="currentColor" d="M421.5 142.8V.1l-50.7 32.3v161.1h112.4v-50.7zm-122.3-9.6A47.12 47.12 0 0 1 221 97.8c0-26 21.1-47.1 47.1-47.1 16.7 0 31.4 8.7 39.7 21.8l42.7-27.2A97.63 97.63 0 0 0 268.1 0c-36.5 0-68.3 20.1-85.1 49.7A98 98 0 0 0 97.8 0C43.9 0 0 43.9 0 97.8s43.9 97.8 97.8 97.8c36.5 0 68.3-20.1 85.1-49.7a97.76 97.76 0 0 0 149.6 25.4l19.4 22.2h3v-87.8h-80l24.3 27.5zM97.8 145c-26 0-47.1-21.1-47.1-47.1s21.1-47.1 47.1-47.1 47.2 21 47.2 47S123.8 145 97.8 145"></path>
+              </svg>
+              <span class="govie-footer__licence-description"> All content is available under the <a class="govie-footer__link" href="#" rel="license"> Open Government Licence v3.0 </a>, except where otherwise stated </span>
+            </div>
+            <div class="govie-footer__meta-item">
+              <a class="govie-footer__link govie-footer__copyright-logo" href="#">
+                <span class="govie-visually-hidden">Copyright logo</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
     <script src="main.js" type="module"></script>
   </body>

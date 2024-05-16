@@ -1,20 +1,22 @@
 import './style.scss'
-
 import { initAll } from '@ogcio/ogcio-ds'
+import logoHelper from './src/logo';
 
-initAll();
-
-// Testing server here.
-async function fetchData() {
-  const response = await fetch('http://localhost:3000');
-  const data = await response.json();
-  document.getElementById('message').innerText = data.hello;
+const utils = {
+  insertHTMLByClass: (html, className) => {
+    var div = document.querySelector('.' + className);
+    if (div) {
+      div.innerHTML = html;
+    } else {
+      console.error('Div element with class ' + className + ' not found.');
+    }
+  }
 }
 
-fetchData();
+function initApp() {
+  // Header
+  utils.insertHTMLByClass(logoHelper.getGovHeaderLogo(), 'govie-header__logotype')
+}
 
-document.querySelector('#app').innerHTML = `
-  <h3 style="padding: 50px">
-    Hello World
-  </h3>
-`
+initAll();
+initApp();
