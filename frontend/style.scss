@@ -1,3 +1,5 @@
+@import '@ogcio/ogcio-ds/govie/all';
+
 // Overriding Styling
 body {
 	font-family: "Lato", "Lato-fallback", sans-serif !important;
@@ -8,7 +10,6 @@ body {
 }
 
 .poc-govie {
-
 	.govie-superheader__navigation-item {
 		.govie-header__navigation-list {
 			padding: 0;
@@ -96,11 +97,6 @@ body {
 		display: flex;
 		margin-top: 50px;
 		justify-content: space-between;
-
-		.govie-regulations-card-container {
-			
-		}
-
 		.govie-regulations--card {
 			border-top: 2px solid grey;
 		}
@@ -187,6 +183,10 @@ body {
 				&-card {
 					margin-top: 20px;
 					max-width: 650px;
+
+					h4 {
+						color: $govie-primary-button-background-colour;
+					}
 				}
 			}
 		}
@@ -209,6 +209,3 @@ body {
 		}
 	}
 }
-
-
-@import '@ogcio/ogcio-ds/govie/all';
