@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@ogcio/ogcio-ds": "file:../../ogcio-ds"
+    "@ogcio/ogcio-ds": "^0.3.1"
   },
   "devDependencies": {
     "sass": "^1.72.0",
